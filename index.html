@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 16th Birthday, My Love!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title" onclick="changeMessage()">Happy 16th Birthday, My Love!</h1>
+        <div class="countdown">
+            <span id="days"></span>
+            <span id="hours"></span>
+            <span id="minutes"></span>
+            <span id="seconds"></span>
+        </div>
+        <div class="message" id="message">
+            <p>Countdown to your special day!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #ff6b81, #ffb6b9);
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Container and Text */
+.container {
+    position: relative;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    text-shadow: 3px 3px 5px rgba(0,0,0,0.2);
+    cursor: pointer;
+    animation: colorChange 3s infinite;
+    transition: transform 0.3s ease-in-out;
+}
+
+h1:hover {
+    transform: scale(1.1);
+}
+
+/* Countdown Styles */
+.countdown {
+    font-size: 2rem;
+    margin-top: 20px;
+    font-weight: bold;
+    animation: countdownAnimation 1s ease-in-out infinite;
+}
+
+.countdown span {
+    display: inline-block;
+    margin: 0 5px;
+    animation: fadeInOut 1.5s ease-in-out infinite;
+}
+
+/* Message Styles */
+.message {
+    font-size: 1.5rem;
+    margin-top: 30px;
+    animation: slideIn 3s ease-out;
+}
+
+/* Animation Definitions */
+@keyframes colorChange {
+    0% { color: #ff6b81; }
+    50% { color: #ffb6b9; }
+    100% { color: #ff6b81; }
+}
+
+@keyframes countdownAnimation {
+    0% { transform: translateY(-10px); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(10px); opacity: 0; }
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes slideIn {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
